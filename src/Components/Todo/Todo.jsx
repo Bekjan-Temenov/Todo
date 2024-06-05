@@ -14,9 +14,8 @@ function Todo() {
                     <input
                         className="border border-blue-700 p-2 rounded-l-md"
                         type="text"
-                        name="todo" x
+                        name="todo"
                         placeholder="Create a new todo"
-
                     />
                     <button className="border border-blue-700 text-blue-700 p-2 hover:bg-blue-800 rounded-r-md  hover:text-white " >
                         Add Task
