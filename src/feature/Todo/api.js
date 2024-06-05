@@ -2,7 +2,7 @@ import { apiRoot } from "../../app/api";
 
 const api ={
     getBranchReq:() => {
-        return apiRoot.get (`/todos`)
+        return apiRoot.get (`/todo`)
     }
 }
 export default api
