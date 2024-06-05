@@ -47,7 +47,7 @@ const Modal = ({ show, onClose, onSubmit, initialData }) => {
                         <label className="block text-left mb-1 text-gray-700">First Name:</label>
                         <input
                             type="text"
-                            name="last_name" // Исправлено с "Lastname" на "last_name"
+                            name="last_name"  
                             value={formData.last_name}
                             onChange={handleChange}
                             className="w-full border border-gray-300 p-2 rounded-md"
