@@ -67,7 +67,7 @@ function Todo() {
                         {item.id}
                       </th>
                       <td className="px-6 py-4">
-                        {item.title}
+                        {item.name}
                       </td>
 
                       <td className="px-6 py-4 text-blue-400 flex justify-center items-center ">
