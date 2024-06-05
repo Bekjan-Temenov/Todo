@@ -1,12 +1,10 @@
-import { createSlice,createAsyncThunk } from "@reduxjs/toolkit";
+import { createSlice } from "@reduxjs/toolkit";
 import { getBranchTodo} from "./action";
 
+import { createSlice } from '@reduxjs/toolkit';
+import { getBranchTodo, addTodo, updateTodo, deleteTodo } from './action';
 
-const initialState = {
-    todos: [],
-    isLoading: false,
-    error: "",
-};
+
 
 const todoSlice = createSlice({
     name: "todo",
@@ -27,6 +25,7 @@ const todoSlice = createSlice({
             })
 
     },
-});
+
+  },
 
 export default todoSlice.reducer;
