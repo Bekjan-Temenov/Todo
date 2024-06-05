@@ -13,7 +13,6 @@ export const getBranchTodo = createAsyncThunk(
   }
 );
 
-
 export const addTodo = createAsyncThunk(
   'todo/addTodo',
   async (newTodo, { rejectWithValue }) => {
