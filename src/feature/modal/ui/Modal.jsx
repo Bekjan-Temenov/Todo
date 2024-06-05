@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import { useState, useEffect } from 'react';
 
 const Modal = ({ show, onClose, onSubmit, initialData }) => {
-    const [formData, setFormData] = useState({ firstName: '', name: '', age: '' });
+    const [formData, setFormData] = useState({ name: '', last_name: '', age: '', gender: '' });
 
     useEffect(() => {
         if (initialData) {
@@ -30,14 +30,14 @@ const Modal = ({ show, onClose, onSubmit, initialData }) => {
             exit={{ opacity: 0 }}
         >
             <motion.div
-                className="bg-white rounded-lg p-6 w-96 shadow-lg"
+                className="bg-white rounded-lg p-6 w-96 shadow-lg relative"
                 initial={{ y: '-100vh' }}
                 animate={{ y: 0 }}
                 exit={{ y: '-100vh' }}
             >
                 <button
                     onClick={onClose}
-                    className="ml-[43vh] mb-[10px]"
+                    className="absolute top-4 right-4 text-xl"
                 >
                     ❌
                 </button>
@@ -47,8 +47,8 @@ const Modal = ({ show, onClose, onSubmit, initialData }) => {
                         <label className="block text-left mb-1 text-gray-700">First Name:</label>
                         <input
                             type="text"
-                            name="firstName"
-                            value={formData.firstName}
+                            name="last_name" // Исправлено с "Lastname" на "last_name"
+                            value={formData.last_name}
                             onChange={handleChange}
                             className="w-full border border-gray-300 p-2 rounded-md"
                         />
@@ -69,6 +69,16 @@ const Modal = ({ show, onClose, onSubmit, initialData }) => {
                             type="number"
                             name="age"
                             value={formData.age}
+                            onChange={handleChange}
+                            className="w-full border border-gray-300 p-2 rounded-md"
+                        />
+                    </div>
+                    <div>
+                        <label className="block text-left mb-1 text-gray-700">Gender:</label>
+                        <input
+                            type="text"
+                            name="gender" 
+                            value={formData.gender}
                             onChange={handleChange}
                             className="w-full border border-gray-300 p-2 rounded-md"
                         />
