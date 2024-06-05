@@ -18,6 +18,7 @@ export const addTodo = createAsyncThunk(
   async (newTodo, { rejectWithValue }) => {
     try {
       const { data } = await api.postBranchReq(newTodo);
+      console.log(data)
       return data;
     } catch (error) {
       return rejectWithValue("Error adding todo");
