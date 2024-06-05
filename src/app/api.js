@@ -1,5 +1,5 @@
-import axios from "axios";
+import axios from 'axios';
 
 export const apiRoot = axios.create({
-    baseURL:"https://66600d715425580055b1ed26.mockapi.io"
-})
+  baseURL: 'http://192.168.68.141:8080',
+});
