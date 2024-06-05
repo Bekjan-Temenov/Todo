@@ -23,28 +23,28 @@ const todoSlice = createSlice({
         state.isLoading = false;
         state.error = action.payload;
       })
-    .addCase(addTodo.fulfilled, (state, action) => {
-      state.todos.push(action.payload);
-    })
-    .addCase(addTodo.rejected, (state, action) => {
-      state.error = action.payload;
-    })
-    .addCase(updateTodo.fulfilled, (state, action) => {
-      const index = state.todos.findIndex(todo => todo.id === action.payload.id);
-      if (index !== -1) {
-        state.todos[index] = action.payload;
-      }
-    })
-    .addCase(updateTodo.rejected, (state, action) => {
-      state.error = action.payload;
-    })
-    .addCase(deleteTodo.fulfilled, (state, action) => {
+      .addCase(addTodo.fulfilled, (state, action) => {
+        state.todos.push(action.payload);
+      })
+      .addCase(addTodo.rejected, (state, action) => {
+        state.error = action.payload;
+      })
+      .addCase(updateTodo.fulfilled, (state, action) => {
+        const index = state.todos.findIndex(todo => todo.id === action.payload.id);
+        if (index !== -1) {
+          state.todos[index] = action.payload;
+        }
+      })
+      .addCase(updateTodo.rejected, (state, action) => {
+        state.error = action.payload;
+      })
+      .addCase(deleteTodo.fulfilled, (state, action) => {
         state.todos = state.todos.filter(todo => todo.id !== action.payload);
       })
-    .addCase(deleteTodo.rejected, (state, action) => {
-      state.error = action.payload;
-    });
-},
+      .addCase(deleteTodo.rejected, (state, action) => {
+        state.error = action.payload;
+      });
+  },
 });
 
 export default todoSlice.reducer;

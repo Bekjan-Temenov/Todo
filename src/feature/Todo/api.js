@@ -5,13 +5,14 @@ const api = {
         return apiRoot.get('/list/');
     },
     postBranchReq: (newTodo) => {
-        return apiRoot.post(`/create`, newTodo);
+        return apiRoot.post(`/create/`, newTodo);
     },
     putBranchReq: (id, updateData) => {
-        return apiRoot.put(`/update/${id}`, updateData);
+        return apiRoot.put(`/update/${id}/`, updateData);  
     },
     deleteBranchReq: (id) => {
-        return apiRoot.delete(`/delete/${id}`);
+        return apiRoot.delete(`/delete/${id}/`);  
     }
 };
 export default api;
+
