@@ -1,11 +1,13 @@
-import { createSlice } from "@reduxjs/toolkit";
-import { getBranchTodo } from "./action";
+import { createSlice,createAsyncThunk } from "@reduxjs/toolkit";
+import { getBranchTodo} from "./action";
+
 
 const initialState = {
     todos: [],
     isLoading: false,
     error: "",
 };
+
 const todoSlice = createSlice({
     name: "todo",
     initialState,
@@ -22,7 +24,8 @@ const todoSlice = createSlice({
             .addCase(getBranchTodo.rejected, (state, { payload }) => {
                 state.isLoading = false;
                 state.error = payload;
-            });
+            })
+
     },
 });
 
