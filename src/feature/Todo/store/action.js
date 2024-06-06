@@ -8,6 +8,7 @@ export const getBranchTodo = createAsyncThunk(
             const { data } = await api.getBranchReq();
             return data;
         } catch (error) {
+            console.error("Error fetching todos", error);
             return rejectWithValue("Error fetching todos");
         }
     }
@@ -18,9 +19,10 @@ export const addTodo = createAsyncThunk(
     async (newTodo, { rejectWithValue }) => {
         try {
             const { data } = await api.postBranchReq(newTodo);
-            console.log(data)
+            console.log(data);
             return data;
         } catch (error) {
+            console.error("Error adding todo", error);
             return rejectWithValue("Error adding todo");
         }
     }
@@ -33,6 +35,7 @@ export const updateTodo = createAsyncThunk(
             const { data } = await api.putBranchReq(id, updateData);
             return data;
         } catch (error) {
+            console.error("Error updating todo", error);
             return rejectWithValue("Error updating todo");
         }
     }
@@ -45,6 +48,7 @@ export const deleteTodo = createAsyncThunk(
             await api.deleteBranchReq(id);
             return id;
         } catch (error) {
+            console.error("Error deleting todo", error);
             return rejectWithValue("Error deleting todo");
         }
     }
