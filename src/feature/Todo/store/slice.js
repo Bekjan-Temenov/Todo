@@ -25,7 +25,7 @@ const todoSlice = createSlice({
       })
       
       .addCase(addTodo.fulfilled, (state, action) => {
-        state.todos.push(action.payload);
+        state.todos.unshift(action.payload);
       })
       .addCase(addTodo.rejected, (state, action) => {
         state.error = action.payload;
